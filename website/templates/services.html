@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Masterpiece</a>
+        <nav class="navbar">
+            <a href="{% url "home" %}">Home</a>
+            <a href="{% url "about" %}">About</a>
+            <a href="{% url "services" %}" class="active">Services</a>
+            <a href="{% url "skills" %}">Skills</a>
+            <a href="{% url "contact" %}">Contact</a>
+        </nav>
+    </header>
+    <section class="services">
+        <div class="services-head">
+            <a href="#" id="graphic-design">Graphic Design</a>
+            <a href="#" id="video-editing">Video Editing</a>    
+            <a href="/Demo/index.html" id="creating-miniapp">Creating Mini-app & Website</a>
+            <a href="#" id="boost-service">Boost Service</a>
+        </div>
+        <div class="services-content">
+            <h2>Remember "Masterpiece" for your bussiness!</h2>
+        </div>
+    </section>
+</body>
+</html>

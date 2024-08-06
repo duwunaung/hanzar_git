@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Masterpiece</a>
+        <nav class="navbar">
+            <a href="{% url "home" %}">Home</a>
+            <a href="{% url "about" %}">About</a>
+            <a href="{% url "services" %}">Services</a>
+            <a href="{% url "skills" %}">Skills</a>
+            <a href="{% url "contact" %}" class="active">Contact</a>
+        </nav>
+    </header>
+    <section class="contact">
+        <div class="form">
+            <label for="name">Name</label>
+            <input type="text" name="name" required>
+            <br>
+            <label for="gmail">E-mail address</label>
+            <input type="gmail" name="gmail" required>
+            <br>
+            <label for="message">Message</label>
+            <textarea name="message" rows="10" cols="80%">
+            </textarea>
+            <br>
+            <button type="submit">Send</button>
+        </div>
+        <div class="contact-content">
+            <h2>
+                Thank for your immpression.<br>
+                I'll contact you soon!
+            </h2>
+            <div class="photo-container">
+                <img src="{% static "contact.png" %}" type="png">
+            </div>
+        </div>
+    </section>
+</body>
+</html>

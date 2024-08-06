@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Masterpiece</a>
+        <nav class="navbar">
+            <a href="{% url "home" %}" class="active">Home</a>
+            <a href="{% url "about" %}">About</a>
+            <a href="{% url "services" %}">Services</a>
+            <a href="{% url "skills" %}">Skills</a>
+            <a href="{% url "contact" %}">Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+            <div class="home-content">
+                <h1>I'm HanZar NiOo</h1>
+                <h3>How I'm interesting to make a living with computer!</h3>
+                <p><span>To be honest,</span>I didn't intend to be a web developer since I was young but I had passion for creativity.I don't know if I should say lucky,I had stay close to the computer because my father was photo editor when I was young. So,I was able to master the basic of computer at home.But I was that age,I didn't appreciate the knowledge that came so easily and I never even thought about making a living with computer.The year after I finished my matriculation exam,I spent my time on the street.</p>
+            <div class="btn-box">
+                <a href="{% url "about" %}">Read more</a>
+                <a href="contact.html">Send mail</a>
+            </div>
+            </div>
+            <div class="photo-container">
+                <img src="{% static "profile.png" %}" type="png">
+            </div>
+            <div class="btn-boxForPhone">
+                <a href="{% url "about" %}">Read more</a>
+                <a href="contact.html">Send mail</a>
+            </div>
+    </section>
+</body>
+</html>

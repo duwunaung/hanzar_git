@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Masterpiece</a>
+        <nav class="navbar">
+            <a href="{% url "home" %}">Home</a>
+            <a href="{% url "about" %}">About</a>
+            <a href="{% url "services" %}">Services</a>
+            <a href="{% url "skills" %}" class="active">Skills</a>
+            <a href="{% url "contact" %}">Contact</a>
+        </nav>
+    </header>
+    <section class="skills">
+    <div class="skills-bar">
+        <h2>My Skills</h2>
+    <ul>
+        <li class="labels">Graphic Design<span class="percent">50%</span></li>
+        <span class="bar"><span class="graphic-design"></span></span>
+        <li class="labels">Video Editing<span class="percent">80%</span></li>
+        <span class="bar"><span class="video-editing"></span></span>
+        <li class="labels">Creating Mini-app & Website<span class="percent">75%</span></li>
+        <span class="bar"><span class="creating-miniapp"></span></span>
+        <li class="labels">Boost Service<span class="percent">90%</span></li>
+        <span class="bar"><span class="boost-service"></span></span>
+    </ul>
+    </div>
+    <div class="video-container">
+        {% comment %} <video src="/BUKAYO SAKA (OR) A Little Magic Arrow.m2ts" type="video/mp4" controls></video> {% endcomment %}
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/nNQXYdJIbH0tOeKV" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen></iframe>
+        <p>
+            You can see my content creating & video editing skills in this video.
+        </p>
+    </div>
+    </section>
+</body>
+</html>

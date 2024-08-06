@@ -1,0 +1,52 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Masterpiece</a>
+        <nav class="navbar">
+            <a href="{% url "home" %}">Home</a>
+            <a href="{% url "about" %}" class="active">About</a>
+            <a href="{% url "services" %}">Services</a>
+            <a href="{% url "skills" %}">Skills</a>
+            <a href="{% url "contact" %}">Contact</a>
+        </nav>
+    </header>
+    <div class="biographyForPhone">
+        <h2>Biography</h2>
+        <ul>
+            <li>Age -22</li>
+            <li>Education - First year/Chemistry</li>
+            <li>Job - full-stack developer</li>
+            <li>Work Experience - 2 yrs</li>
+        </ul>
+    </div>
+    <section class="about">
+        <div class="about-content">
+            <p id="content"><span>Last two years,</span>I saw a video when I was using my phone.That was how we can get money comfortbaly just using our laptop (or) phone.Do you know?I'm so lazy to work too hard.So I watch that video interesting until the end.
+                It was sharing about make video and upload on socialmedia such as Facebook,Youtube,Tiktok... and earn money from advertisment. Most people also known that as <strong style="color: red;">Youtuber</strong>.
+                <br>
+                <span>So,</span>I tried to stand as a video creator.Since I was young,I wanted to be a football player.But,it didn't hsppen for varios reasons.
+                So,I decided to build "Football Entertainment Channel" and entertain people football video.After two months,I could make a video named <strong>"BUKAYO SAKA (OR) A Little Magic Arrow"</strong>.
+            </p>
+            <a href="skills.html">Watch video</a>
+        </div>
+        <div class="biography">
+            <h2>Biography</h2>
+            <ul>
+                <li>Age -22</li>
+                <li>Education - First year/Chemistry</li>
+                <li>Job - full-stack developer</li>
+                <li>Work Experience - 2 yrs</li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
