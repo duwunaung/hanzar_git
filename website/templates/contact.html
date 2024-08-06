@@ -21,7 +21,16 @@
     </header>
     <section class="contact">
         <div class="form">
-            <label for="name">Name</label>
+            <form action="{% url 'send_message' %}" method="POST">
+                {% csrf_token %}
+                {% for form_field in message_form %}
+                  <div class="form-control {% if form_field.errors %}{% endif %}">{{ form_field.label_tag }}
+                    {{ form_field }}
+                    {{ form_field.errors }}</div>
+                {% endfor %}
+
+            <button>Submit</button>
+            {% comment %} <label for="name">Name</label>
             <input type="text" name="name" required>
             <br>
             <label for="gmail">E-mail address</label>
@@ -31,12 +40,18 @@
             <textarea name="message" rows="10" cols="80%">
             </textarea>
             <br>
-            <button type="submit">Send</button>
+            <button type="submit">Send</button> {% endcomment %}
         </div>
         <div class="contact-content">
             <h2>
-                Thank for your immpression.<br>
-                I'll contact you soon!
+                {% if status == "new" %}
+                    Hello, how can I help you today, sir?
+                {% elif status == "submitted" %}
+                        Thanks for messaging me, I will contact you, soon.
+                {% elif status == "wrong" %}
+                    I think you would like to message me, right? <br/>
+                    Kindly visit this <a href="{% url "contact" %}"> page </a>
+                {% endif %}
             </h2>
             <div class="photo-container">
                 <img src="{% static "contact.png" %}" type="png">

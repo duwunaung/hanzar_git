@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect, reverse
+from .forms import MessageForm
 # Create your views here.
 def index_page(request):
     return render(request, 'index.html')
@@ -14,4 +14,16 @@ def skills_page(request):
     return render(request, 'skills.html')
     
 def contact_page(request):
-    return render(request, 'contact.html')
+
+    return render(request, 'contact.html', {"message_form" : MessageForm, "status": "new"})
+
+
+def send_message(request):
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'contact.html', {"message_form" : MessageForm, "status": "submitted"})
+    else:
+        return render(request, 'contact.html', {"message_form" : MessageForm, "status": "wrong"})
+    return render(request, 'contact.html', {"message_form" : MessageForm, "status": "new"})
